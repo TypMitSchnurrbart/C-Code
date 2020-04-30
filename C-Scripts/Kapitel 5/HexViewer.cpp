@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <Windows.h>
+#include <typeinfo>
 using namespace std;
 
 int hex_liste(int count_value, string mode_flag) {
@@ -59,7 +60,7 @@ int version() {
     /*
     Printing out Version and Author
     */
-    printf("Version: 1.1\nCopyright Alexander Mueller TIT19\n");
+    printf("Version: 1.2\nCopyright Alexander Mueller TIT19\n");
 }
 
 int main(int argc, char* argv[]) {
@@ -79,10 +80,12 @@ int main(int argc, char* argv[]) {
                 exit(1);
     case 'v' : version();
                 exit(2);
-    case 'c' : count_value = (int)optarg;
+    case 'c' : count_value = atoi(optarg);
+                break;
     case 'o' : mode_flag = "okt";
+                break;
     default:
-        break;
+        exit(3);
     }
 
     hex_liste(count_value, mode_flag);
