@@ -14,7 +14,7 @@ public:
    
     //Getter Methoden 
     string get_Name(){ return t_name; }             //string;int;etc defines data type of return value of the function
-    string get_Color(){ return t_color; }           //static Values are shared for all objects
+    string get_Color(){ return t_color; }           //static Values are shared for all objects; and they exist before the first object
     int32_t get_Radius(){ return t_radius; }
 
     //Setter Methode
