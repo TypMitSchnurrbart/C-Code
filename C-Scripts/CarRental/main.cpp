@@ -8,13 +8,13 @@ using namespace std;
 int help()
 /*Get Help-Page of the Script*/ 
 {
-    cout << "Loading help page of Car Rental...\n\t-h = open this Help\n\t-v = Show version of Programm\n\nIf still problems occur please contact the developer.";
+    cout << "Loading help page of Car Rental...\n\t-h = open this Help\n\t-v = Show version of Programm\n\nIf still problems occur please contact the developer.\n";
 }
 
 int version()
 /*Get Version of the Script*/
 {
-    cout << "Current Version: 0.1 pre-Alpha\nCopyrigt by Alexander Mueller";
+    cout << "Current Version: 0.1 pre-Alpha\nCopyrigt by Alexander Mueller\n";
 }
 
 int setup(bool admin_mode)
@@ -44,7 +44,10 @@ int main(int argc, char* argv[])
                 exit(1);
     case 'v' : version();
                 exit(1);
-    case 'a' : if (optarg == "admin") { admin_mode = true; }
+    case 'a' : if ((string)optarg == "admin") {         //type if optarg uncertain; not true
+                    admin_mode = true; 
+                    break; 
+                    }
     default:
         cout << "Wrong Inputs! Type -h for further advise!\n";
         exit(3);
