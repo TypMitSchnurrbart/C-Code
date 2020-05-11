@@ -7,7 +7,7 @@ int customer()
     while (true) {
 
         cout << "Welcome to Car Shareing Hinterdupfingen\nWhat action do you want to make?\n";
-        cout << "Rent a Car [1]\nRegsiter as new User [2]\n";
+        cout << "Rent a Car [1]\nInsert Money [2]\nRegsiter as new User [3]\n";
         cin >> input_cache;
 
         if (input_cache == "1") 
@@ -17,8 +17,12 @@ int customer()
         }
         else if (input_cache == "2")
         {
-            cout << "Register a new User...\n";
+            cout << "Loading the Cash Service...\n";
             break;
+        }
+        else if (input_cache == "3")
+        {
+            cout << "Loading User Registration...";
         }
         else
         {

@@ -31,6 +31,7 @@ private:
 
 
 //----------------------Main-Area--------------------------------
+
 string a;
 string color_cache;
 string color = "";
@@ -71,5 +72,26 @@ int main()
 
     cout << tasse_1.get_Name() << endl << tasse_1.get_Color() << endl;                        //Output-Stream zum "print" nach der Reihenfolge mit ENDLINE abgeschlossen
   
+
+    //Zeug zum Üben von C++-----------------------------------------
+
+    //Der Scope-Operator ::, drückt aus wo das was hinten dran steht hingehört.  Scope::WasHintenDranSteht 
+    //Lässt man den Scope vor :: weg sucht er automatisch im globalen Scope!
+
+    //Namespaces; ermöglicht gleiche Namen von Variabeln indem jede durch eigenen Namespace unterschieden werden mit Scope-Operator (namespace_1::var != namespace_2::var)
+    //mehrere "using namespace <name>" möglich, dann wird einfach in allen nach der Variable/Funktion gesucht
+
+
+    //Überladen von Funktionen
+    
+
+    //Referenzen
+    /*
+    Variable    = Pointer auf Speicherort
+    Pointer     = Zeigt auf Speicherort wo die Variable liegt
+    Referenz    = "zu verstehen als alias" Zeigt auf Variable im Script
+    */
+
+
 }
 
