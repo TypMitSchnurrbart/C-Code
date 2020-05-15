@@ -57,6 +57,7 @@ int main ()
 		cout << "Der Wert von gamma ist: " << gamma.getValue() << endl;
 		cout << "Anzahl Instanzen ist: " << Integer::instances << endl;
 	} // gamma stirbt!
+	
 	cout << "Anzahl Instanzen ist: " << Integer::instances << endl;
 	delete alpha;
 	return 0;
