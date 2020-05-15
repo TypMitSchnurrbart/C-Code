@@ -28,11 +28,12 @@ int hex_liste(int count_value, string mode_flag) {
     {
         while((chr = fgetc(reader)) != EOF)             //Sobald chr zu EndOfFile wird
         {
-            printf("%p - ", &reader);
+            printf("%p - ", &ascii);
 
             for (i = 0; i < count_value; i++)
             {
                 fread(&ascii, sizeof(char), 1, reader);
+
                 if (mode_flag == "hex") {               //Print in HEX
                     printf("%x ", ascii);
                 }
