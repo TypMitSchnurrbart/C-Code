@@ -16,25 +16,27 @@ class Car
         
 };
 
-class Truck : public Car
+class Truck : public Car                    //mit public bekommen wir alles! auch private; würde nur protected stehen würde man public nicht kriegen
 {
     public:
 
-        Truck(string name, uint16_t power): Car() { c_name = name; c_power = power; }
+        Truck(string name, uint16_t power): Car() { c_name = name; c_power = power; }    //Car Konstruktor wird komplett aufgerufen, Alles darin wird ausgeführt
 
             string inline getName() { return c_name; }
             int inline setName(string name) { c_name = name; }
 
-            uint8_t inline getPower() { return c_power; }
+            uint16_t inline getPower() { return c_power; }
             int inline setPower(uint16_t power) { power = c_power; }
 };
 
 int main()
 {
-    Car v1();
-    Truck v2("multipla", 120);
+    Car v1;
+    Truck v2("Multipla", 120);
 
-    cout << "Werte v2: " << v2.getName() << v2.getPower() << endl;
+    cout << "Werte v2: " << v2.getName() << " Leistung: " << v2.getPower() << endl;
 
-    cout << "Size v1: " << sizeof(v1) << "\nSize v2: " << sizeof(v2);
+    cout << "Size v1: " << sizeof(v1) << " bytes\nSize v2: " << sizeof(v2) << " bytes" << endl;
 }
+
+/* Man muss drauf achten nach welcher Klasse interpretiert wird. Eigentlich nimmt er immer die Urklasse im Zweifel */
