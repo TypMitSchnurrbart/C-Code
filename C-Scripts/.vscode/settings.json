@@ -1,3 +1,6 @@
 {
-    "C_Cpp.default.intelliSenseMode": "clang-x64"
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
+    "files.associations": {
+        "iosfwd": "cpp"
+    }
 }
