@@ -11,6 +11,7 @@ class mypair {
   public:
     mypair (T first, T second) : a(first), b(second) {}  //Konstruktor mit den beiden Variablen als T deklariert, dann mit der zuordnung
     T getmax ();                                            // T beschreibt hier dass der Rückgabe werden ein Template wird
+    virtual ~mypair()
 };
 
 // Zu Beachten:
