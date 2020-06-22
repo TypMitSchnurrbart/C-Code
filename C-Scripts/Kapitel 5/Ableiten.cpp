@@ -16,7 +16,7 @@ class Car
         
 };
 
-class Truck : public Car                    //mit public bekommen wir alles! auch private; würde nur protected stehen würde man public nicht kriegen
+class Truck : public Car                    //Vererbt alles außer private von Car und behandelt es als public in Truck; heißt was in Car noch protec. war ist in Truck public
 {
     public:
 
