@@ -22,6 +22,7 @@ Temp Random<Temp>::randomshit(float zahle) {
 }
 
 
+
 int main() {
 
     Random <int> Entity_1(23, 13);
