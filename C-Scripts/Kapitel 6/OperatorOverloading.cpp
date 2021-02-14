@@ -20,6 +20,13 @@ class C_vector {
         return result;                                          //Return ein Objekt dass somit zu v3 wird!
     }
 
+    int operator*(const C_vector &input_vector) {
+
+        int result;
+        result = this->x * input_vector.x + this->y * input_vector.y + this->z * input_vector.z;
+        return result;
+    }
+
     friend ostream& operator<<(ostream& print, const C_vector &vektor) {        //Hier muss friend sein, weil ostream eigentlich private ist! Friend umgeht private!
 
         print << vektor.x << "\n" << vektor.y << "\n" << vektor.z << endl;
@@ -34,6 +41,8 @@ int main()
     C_vector v3 = v1 + v2;          //Ohne Definition von + als Operator der Klasse -> Fehler; man muss also + als Operator überladen da "+" schon existiert; sonst müsste man 
                                     //eine ganze Methode C_vector::addiere(v1, v2) schreiben die diese Funktion  erfüllt
 
-    cout << v2;
+    cout << "Vektor Addition:\n" << v3 << endl;
+
+    cout << "Skalar-Produkt:\n" << v1*v2 << endl;
 
 }

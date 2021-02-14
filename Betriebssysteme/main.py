@@ -3,18 +3,39 @@ Main for a small scheduler sim with gui; this its mainly for testing at the mome
 """
 import sys
 import time
+from datetime import datetime
 
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 from scheduler_sim_gui import Ui_main_window
+from src.processor import Processor
+from src.const import PROCESS_LIST
+from src.process import Process
 
 class Window(QMainWindow, Ui_main_window):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.start_btn_state)
+
+        # Add Button
+        self.pushButton_add.clicked.connect(self.add_process_to_queue)
+
+
+    def add_process_to_queue(self):
+
+        arrival_time = self.spin_arraival_time.value()
+        burst_time = self.spin_burst_time.value()
+
+        PROCESS_LIST.append(Process(arrival_time, burst_time))
+
+        pid = PROCESS_LIST[-1].get_pid()
+        arrival_time = PROCESS_LIST[-1].get_arrival_time()
+        burst_time = PROCESS_LIST[-1].get_burst_time()
+
+        current_time = datetime.now().strftime("[%H:%M:%S]\t")
+        self.terminal_output.append(f"{current_time}Process added.\tPID: {pid}\tArrival: {arrival_time}\tBurst: {burst_time}")
 
     def start_btn_state(self):
         if not self.pushButton.isChecked():
@@ -45,21 +66,6 @@ class Counter_Worker(QRunnable):
         
         clock_time = single_core.reset_clock_time()
         self.window.system_clock_display.display(clock_time)
-
-class Processor():
-    def __init__(self, clock_time = 0):
-        self.clock_time = clock_time
-
-    def get_clock_time(self):
-        return self.clock_time
-
-    def get_clock_time_step(self):
-        self.clock_time += 1
-        return self.clock_time
-    
-    def reset_clock_time(self):
-        self.clock_time = 0
-        return self.clock_time
 
 if __name__ == "__main__":
 
